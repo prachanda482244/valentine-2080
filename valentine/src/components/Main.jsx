@@ -17,18 +17,18 @@ const Main = ({ name = [] }) => {
     const showArray = [...greeting, ...name]
     const [loadingState, setLoadingState] = useState(false)
     const imageArray = [
-        { id: 1, img: img1, },
-        { id: 2, img: img2, },
-        { id: 3, img: img3, },
-        { id: 4, img: img4, },
-        { id: 5, img: img5, },
-        { id: 6, img: img6, },
-        { id: 7, img: img7, },
-        { id: 8, img: img8, },
-        { id: 9, img: img9, },
-        { id: 10, img: img10, },
-        { id: 11, img: img11, },
-    ]
+        { id: 1, text: 'I love you so much Merijaan', img: img1 },
+        { id: 2, text: 'You are my everything', img: img2 },
+        { id: 3, text: 'You make me complete', img: img3 },
+        { id: 4, text: 'You are the love of my life', img: img4 },
+        { id: 5, text: 'My heart belongs to you', img: img5 },
+        { id: 6, text: 'You are my sunshine', img: img6 },
+        { id: 7, text: 'You are the most beautiful person I know', img: img7 },
+        { id: 8, text: 'You mean everything to me', img: img8 },
+        { id: 9, text: 'You are my soulmate', img: img9 },
+        { id: 10, text: 'You are the light in my life', img: img10 },
+        { id: 11, text: 'You make every day brighter', img: img11 },
+    ];
     const variants = {
         initial: {
             y: -1000,
@@ -64,13 +64,12 @@ const Main = ({ name = [] }) => {
     }
     const imgVariants = {
         initial: {
-            y: -100,
+            x: -500,
             opacity: 0,
         },
         animate: {
-            y: 0,
+            x: 0,
             opacity: 1,
-            rotate: 360,
             transition: {
                 duration: .5,
                 stiffness: 150,
@@ -89,13 +88,13 @@ const Main = ({ name = [] }) => {
             variants={variants}
             initial="initial"
             animate="animate"
-            className="bg-purple-800 absolute w-full z-10 min-h-screen flex items-center justify-center">
+            className="bg-black absolute w-full z-10 min-h-screen flex items-center justify-center">
 
-            <motion.div variants={variants} className=" absolute bg-black  min-h-screen min-w-full">
-                <motion.div variants={textVariants} initial="initial" animate="animate" className="flex  items-center flex-wrap p-10 gap-4">
+            <motion.div variants={variants} className="   min-h-screen min-w-full">
+                <motion.div variants={textVariants} initial="initial" animate="animate" className="flex  items-center flex-wrap p-5 gap-4">
                     <button className="border-2 absolute right-10 top-3 px-2 py-1 rounded-lg text-white font-semibold uppercase" onClick={() => setLoadingState(true)}>go back</button>
 
-                    <div className="flex flex-wrap border-2 p-10 items-center mt-10 gap-2">
+                    <motion.div variants={textVariants} initial="initial" animate="animate" className="flex flex-wrap  items-center mt-10 gap-2">
 
                         {
                             name.join('').toLowerCase() !== 'sushmita' ?
@@ -107,13 +106,17 @@ const Main = ({ name = [] }) => {
                         {
                             name.join('').toLowerCase() === 'sushmita' ?
                                 imageArray.map((elem) => (
-                                    <motion.div variants={imgVariants} className=" flex items-center justify-center border-2  gap-2  overflow-hidden rounded-full " key={elem.id}>
-                                        <img src={elem.img} className="w-52 h-52  object-cover rounded-lg" alt="array" />
+                                    <motion.div variants={imgVariants}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        className=" flex gap-3 p-4" key={elem.id}>
+                                        <motion.h1 variants={imgVariants} style={{ textShadow: "2px 2px 5px blue", boxShadow: '2px 2px 10px purple' }} className="border-2 text-slate-400 md:w-40 w-1/2 rounded-lg text-xl tracking-wider font-semibold ">{elem.text}</motion.h1>
+                                        <motion.img variants={imgVariants} style={{ boxShadow: '2px 2px 10px white' }} src={elem.img} className="w-32 h-52 object-cover rounded-lg" alt="array" />
                                     </motion.div>
                                 ))
                                 : null
                         }
-                    </div>
+                    </motion.div>
 
                 </motion.div>
             </motion.div>
