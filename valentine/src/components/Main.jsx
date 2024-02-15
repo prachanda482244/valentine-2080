@@ -94,7 +94,7 @@ const Main = ({ name = [] }) => {
                 <motion.div variants={textVariants} initial="initial" animate="animate" className="flex  items-center flex-wrap p-5 gap-4">
                     <button className="border-2 absolute right-10 top-3 px-2 py-1 rounded-lg text-white font-semibold uppercase" onClick={() => setLoadingState(true)}>go back</button>
 
-                    <motion.div variants={textVariants} initial="initial" animate="animate" className="flex flex-wrap  items-center mt-10 gap-2">
+                    <motion.div variants={textVariants} initial="initial" animate="animate" className="flex relative flex-wrap  items-center mt-10 gap-2">
 
                         {
                             name.join('').toLowerCase() !== 'sushmita' ?
@@ -114,6 +114,9 @@ const Main = ({ name = [] }) => {
                                 ))
                                 : null
                         }
+                        <motion.span initial={{ x: -1500 }} animate={{ x: 0 }} transition={{ duration: 1, delay: 2, stiffness: 150, damping: 20 }} className=" absolute top-20 right-10 font-bold text-white">
+                            Greeting by : Prachanda Rana
+                        </motion.span>
                     </motion.div>
 
                 </motion.div>
