@@ -106,13 +106,11 @@ const Main = ({ name = [] }) => {
                         {
                             name.join('').toLowerCase() === 'sushmita' ?
                                 imageArray.map((elem) => (
-                                    <motion.div variants={imgVariants}
-                                        initial="initial"
-                                        whileInView="animate"
+                                    <div
                                         className=" flex gap-3 p-4" key={elem.id}>
                                         <motion.h1 variants={imgVariants} style={{ textShadow: "2px 2px 5px blue", boxShadow: '2px 2px 10px purple' }} className="border-2 text-slate-400 md:w-40 w-1/2 rounded-lg text-xl tracking-wider font-semibold ">{elem.text}</motion.h1>
                                         <motion.img variants={imgVariants} style={{ boxShadow: '2px 2px 10px white' }} src={elem.img} className="w-32 h-52 object-cover rounded-lg" alt="array" />
-                                    </motion.div>
+                                    </div>
                                 ))
                                 : null
                         }
