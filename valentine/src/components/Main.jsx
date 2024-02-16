@@ -109,12 +109,12 @@ const Main = ({ name = [] }) => {
                                     <div
                                         className=" flex gap-3 p-4" key={elem.id}>
                                         <motion.h1 variants={imgVariants} style={{ textShadow: "2px 2px 5px blue", boxShadow: '2px 2px 10px purple' }} className="border-2 text-slate-400 md:w-40 w-1/2 rounded-lg text-xl tracking-wider font-semibold ">{elem.text}</motion.h1>
-                                        <motion.img variants={imgVariants} style={{ boxShadow: '2px 2px 10px white' }} src={elem.img} className="w-32 h-52 object-cover rounded-lg" alt="array" />
+                                        <motion.img variants={imgVariants} style={{ boxShadow: '2px 2px 10px white' }} src={elem.img} className="w-32 h-52 object-cover rounded-lg" alt="my-wife" />
                                     </div>
                                 ))
                                 : null
                         }
-                        <motion.span initial={{ x: -1500 }} animate={{ x: 0 }} transition={{ duration: 1, delay: 2, stiffness: 150, damping: 20 }} className=" absolute top-20 right-10 font-bold text-white">
+                        <motion.span initial={{ x: -1500 }} animate={{ x: 0 }} transition={{ duration: 1, delay: 2, stiffness: 150, damping: 20 }} className=" absolute bottom:20 md:bottom-0 md:top-20 right-10 font-bold text-white">
                             Greeting by : Prachanda Rana
                         </motion.span>
                     </motion.div>
