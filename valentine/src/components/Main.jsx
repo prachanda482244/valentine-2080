@@ -115,7 +115,7 @@ const Main = ({ name = [] }) => {
                                 : null
                         }
                         <motion.span initial={{ x: -1500 }} animate={{ x: 0 }} transition={{ duration: 1, delay: 2, stiffness: 150, damping: 20 }} className=" absolute bottom:20 md:bottom-0 md:top-20 right-10 font-bold text-white">
-                            Greeting by : Prachanda Rana
+                            Greeting by : Prachanda rana
                         </motion.span>
                     </motion.div>
 
